@@ -27,6 +27,7 @@ const app = express();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 app.use(helmet());
+// const coreOptions = { "methods": "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS" };
 app.use(cors());
 app.use(express.json());
 

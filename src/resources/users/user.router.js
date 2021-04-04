@@ -9,6 +9,8 @@ const {
 } = require('../../utils/validation/validator');
 
 router.post('/', validator(user, 'body'), async (req, res) => {
+  // const file = req.files.file;
+  // req.body.avatar = new Buffer.from(file.data).toString('base64');
   const userEntity = await userService.save(req.body);
   res.status(OK).send(userEntity.toResponse());
 });
